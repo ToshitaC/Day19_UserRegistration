@@ -19,9 +19,15 @@ public class UserRegistration {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String firstName = "";
+        String lastName = "";
+
         System.out.println("Enter Firstname: ");
         firstName = sc.nextLine();
-        validateName(firstName);
+        validateName(firstName); //firstName method
+
+        System.out.println("Enter Lastname: ");
+        lastName = sc.nextLine();
+        validateName(lastName); //lastName method
         sc.close();
     }
 
