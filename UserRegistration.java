@@ -42,7 +42,7 @@ public class UserRegistration {
     }
 
     public static void validatePassword(String password) {
-        String passwordPattern = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
+        String passwordPattern = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$";
         Pattern pattern = Pattern.compile(passwordPattern);
         Matcher matcher = pattern.matcher(password);
 
