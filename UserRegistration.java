@@ -53,7 +53,32 @@ public class UserRegistration {
             System.out.println("1)Your password must contain minimum 8 characters\n2)Should have atleast 1 UpperCase\n3)Should have atleast 1 numeric number\n4)Has exactly one character");
         }
     }
-
+    public void verifyEmail() {
+        //Valid email Id
+        System.out.println("\n\nChecking Emails: ");
+        validateEmail("abc-100@yahoo.com");
+        validateEmail("abc.100@yahoo.com");
+        validateEmail("abc111@abc.com");
+        validateEmail("abc-100@abc.net");
+        validateEmail("abc.100@abc.com.au");
+        validateEmail("abc@1.com");
+        validateEmail("abc@gmail.com.com");
+        validateEmail("abc+100@gmail.com");
+        //Invalid email Id
+        validateEmail("abc");
+        validateEmail("abc@.com.my");
+        validateEmail("abc123@gmail.a");
+        validateEmail("abc123@.com");
+        validateEmail("abc123@.com.com");
+        validateEmail(".abc@abc.com");
+        validateEmail("abc()*@gmail.com");
+        validateEmail("abc@%*.com");
+        validateEmail("abc..2002@gmail.com");
+        validateEmail("abc.@gmail.com");
+        validateEmail("abc@abc@gmail.com");
+        validateEmail("abc@gmail.com.1a");
+        validateEmail("abc@gmail.com.aa.au");
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String firstName = "";
@@ -78,9 +103,6 @@ public class UserRegistration {
         mobileNumber = sc.nextLine();
         validateMobile(mobileNumber);//validation of MobileNumber
 
-        System.out.println("Enter the password");
-        password = sc.nextLine();
-        validatePassword(password);//validation of Password
         sc.close();
     }
 
