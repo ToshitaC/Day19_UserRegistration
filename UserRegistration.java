@@ -42,7 +42,7 @@ public class UserRegistration {
     }
 
     public static void validatePassword(String password) {
-        String passwordPattern = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$";
+        String passwordPattern = "^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%!]).{8,}$";
         Pattern pattern = Pattern.compile(passwordPattern);
         Matcher matcher = pattern.matcher(password);
 
@@ -50,7 +50,7 @@ public class UserRegistration {
             System.out.println(password + " is valid");
         } else {
             System.out.println(password + " is not valid");
-            System.out.println("1)Your password must contain minimum 8 characters\n2)Should have atleast 1 UpperCase");
+            System.out.println("1)Your password must contain minimum 8 characters\n2)Should have atleast 1 UpperCase\n3)Should have atleast 1 numeric number\n4)Has exactly one character");
         }
     }
 
